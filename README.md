@@ -20,8 +20,8 @@ Frontend Steps:
 7. In src folder, create a components folder. Add files:
   - CreateNote.jsx
   - EditNote.jsx
-  - NoteList.
-8. Update App.js and index.js folders
+  - NoteList.jsx
+8. Update App.js and index.js files
 See https://mfikri.com/en/blog/express-mysql-react for examples of code in steps 7 and 8.
 
 Backend Steps:
