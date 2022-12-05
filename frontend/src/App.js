@@ -1,26 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { Component }  from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route }  from 'react-router-dom';
+
+// npm i reacty-router-dom
+// npm i axios - makes API calls to backend
+
+
+import SigninPage from './pages/SigninPage';
+import DashboardPage from './pages/DashboardPage';
+import CreatePage from './pages/CreatePage';
+import DeletePage from './pages/DeletePage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={ <SigninPage /> } />
+          <Route path='/dashboard' element={ <DashboardPage /> } />
+          <Route path='/create' element={ <CreatePage /> } />
+          <Route path='/delete/:id' element={ <DeletePage /> } />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;

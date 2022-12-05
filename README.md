@@ -38,3 +38,9 @@ See https://mfikri.com/en/blog/express-mysql-react for examples of code for step
 Additional Resources:
 https://www.mongodb.com/languages/mern-stack-tutorial
 https://www.positronx.io/react-mern-stack-crud-app-tutorial/
+https://community.codenewbie.org/itsnitinr/beginner-s-guide-to-the-mern-stack-roadmap-resources-37kj
+https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61
+https://betterprogramming.pub/simple-notes-app-with-node-js-and-mongoosejs-6595cd5d15b
+https://github.com/rajpatel17-bot/mern-note-taking-app
+https://www.codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/
+https://javascript.plainenglish.io/lets-build-an-api-with-express-js-and-mongodb-for-crud-operations-d87182c57fad
