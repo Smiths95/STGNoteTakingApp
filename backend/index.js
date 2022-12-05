@@ -1,18 +1,38 @@
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import UserRoute from "./routes/UserRoute.js";
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const path = require('path');
+
+const usersRouter = require('./routes/users.route');
+const notesRouter = require('./routes/notes.route');
 
 const app = express();
-mongoose.connect("mongodb://localhost:27017/nt_database", {  // nt_database will be automatically created in MongoDB
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on("error", (error) => console.log(error));
-db.once("open", () => console.log("Database Connected..."));
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(UserRoute);
-app.listen(5000, () => console.log("Server up and running..."));
+
+const dbURL =  "mongodb://localhost:27017";
+
+mongoose
+    .connect(process.env.MONGODB_URI ||dbURL,{ useUnifiedTopology:true, useNewUrlParser: true })
+    .then(() => console.log("MongoDB successfully connected"))
+    .catch(err => console.log(err));
+    
+mongoose.set('useCreateIndex', true);
+
+app.use('/users',usersRouter);
+app.use('/notes',notesRouter);
+
+if(process.env.NODE_ENV === 'production') {
+   
+    app.use(express.static(path.join(__dirname, "client", "build")))
+
+    app.get('*',(req, res) => {
+        res.sendFile(path.join(__dirname,'client','build','index.html'));
+    });
+}
+
+app.listen(port,()=>{
+    console.log(`Server is running on port:${port}`);
+});
