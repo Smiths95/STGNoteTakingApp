@@ -47,8 +47,8 @@ app.post('/addnote', async(req, res) => {
 })
 app.post('/deletenote', (req, res) => {
     const {userToken} = req.body
-    res.sendFile("pages/signup.html",{root: __dirname})
+    res.send("DELETED")
 })
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`app listening on port ${port}`)
 })
