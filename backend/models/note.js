@@ -1,26 +1,29 @@
 const mongoose = require('mongoose');
 
-const noteSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        trim: true
-    },
-    content: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    owner: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-    }
-},
-{
-    timestamps: true,
-    toJSON: { virtuals: true }
+const NoteSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
+    required: [true, 'Note creator must be present'],
+  },
+  title: {
+    type: String,
+    required: [true, 'Note title is required'],
+  },
+  content: {
+    type: String,
+    required: [true, 'Please provide note content'],
+  },
+  tag: {
+    type: String,
+    default: 'General'
+  },
+  date: {
+    type: String,
+    default: Date.now(),
+  },
 });
 
-const Note = mongoose.model('Note', noteSchema);
+const Note = mongoose.model('note', NoteSchema);
 
 module.exports = Note;

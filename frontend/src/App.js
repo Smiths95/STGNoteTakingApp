@@ -1,30 +1,44 @@
 import './App.css';
-import React from 'react';
-import { BrowserRouter, Routes, Route }  from 'react-router-dom';
-
-// npm i reacty-router-dom
-// npm i axios - makes API calls to backend
-
-
-import SigninPage from './pages/SigninPage';
-import DashboardPage from './pages/DashboardPage';
-import CreatePage from './pages/CreatePage';
-import DeletePage from './pages/DeletePage';
-
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import About from './components/About';
+import Home from './components/Home';
+import NoteState from './context/NoteState';
+import Alert from './components/Alert';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
+
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      message: message,
+      type: type
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 1500)
+  };
+
   return (
-    <div className='App'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={ <SigninPage /> } />
-          <Route path='/dashboard' element={ <DashboardPage /> } />
-          <Route path='/create' element={ <CreatePage /> } />
-          <Route path='/delete/:id' element={ <DeletePage /> } />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  )
-}
+    <NoteState>
+      <Router>
+        <Navbar />
+        <Alert alert={ alert } />
+        <div className='container'>
+          <Routes>
+            <Route exact path='/' element={ <Home showAlert={ showAlert } /> } />
+            <Route exact path='/about' element={ <About /> } />
+              <Route exact path='/login' element={ <Login showAlert={ showAlert } /> } />
+              <Route exact path='/signup' element={ <Signup showAlert={ showAlert } /> } />
+          </Routes>
+        </div>
+      </Router>
+    </NoteState>
+  );
+};
 
 export default App;
