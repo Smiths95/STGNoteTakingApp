@@ -2,21 +2,23 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const noteRoutes = require('./routes/notes');
-const userRoutes = require('./routes/auth');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 
 connectDB();
+const app = express();
+const port = 3001;
+
 app.use(cors());
 app.use(express.json());
 
 
-app.use('/api/notes', noteRoutes);
+const userRoutes = require('./routes/auth');
 app.use('/api/auth', userRoutes);
 
+const noteRoutes = require('./routes/notes');
+app.use('/api/notes', noteRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Listening on PORT: ${PORT}`.blue)
+
+
+app.listen(port, () => {
+  console.log(`STG Note-Taker backend listening on port http://localhost:${port}`)
 })

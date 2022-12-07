@@ -11,7 +11,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:3000/api/auth/login`, {
+        const response = await fetch(`http://localhost:3001/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,12 +43,12 @@ const Login = (props) => {
         <Container className='mt-3'>
             <h2 className='mb-4 text-center'>Log In to Continue to STG Note-Taker</h2>
             <Form onSubmit={ handleSubmit }>
-                <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type='email' value={ credentials.email } id='email' name='email' onChange={ onChange } />
                     <Form.Text id='emailHelp' className='text-muted'>We'll never share your email address with anyone.</Form.Text>
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type='password' value={ credentials.password } id='password' name='password' onChange={ onChange } />
                 </Form.Group>

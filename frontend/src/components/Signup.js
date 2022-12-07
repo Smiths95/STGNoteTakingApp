@@ -18,7 +18,7 @@ const Signup = (props) => {
 
         const { name, email, password } = credentials;
 
-        const response = await fetch(`http://localhost:3000/api/auth/createuser`, {
+        const response = await fetch(`http://localhost:3001/api/auth/createuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,22 +52,22 @@ const Signup = (props) => {
         <Container className='mt-2'>
             <h2 className='mb-2 text-center'>Create an Account for STG Note-Taker</h2>
             <Form onSubmit={ handleSubmit }>
-                <Form.Group className='mb-3' controlId='formBasicName'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Name</Form.Label>
                     <Form.Control type='text' id='name' name='name' onChange={ onChange } aria-describedby='emailHelp' />
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type='email' id='email' name='email' onChange={ onChange } aria-describedby='emailHelp' />
                     <div id='emailHelp' className='form-text'>We'll never share your email address with anyone.</div>
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicPassword'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type='password' id='password' name='password' onChange={ onChange } minLenght={ 8 } required />
+                    <Form.Control type='password' id='password' name='password' onChange={ onChange } minLength={ 8 } required />
                 </Form.Group>
-                <Form.Group className='mb-3' controlId='formBasicCPassword'>
+                <Form.Group className='mb-3'>
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type='password' id='cpassword' name='cpassword' onChange={ onChange } minLenght={ 8 } required />
+                    <Form.Control type='password' id='cpassword' name='cpassword' onChange={ onChange } minLength={ 8 } required />
                 </Form.Group>
                 <Button type='submit' className='primary'>Sign Up</Button>
             </Form>
