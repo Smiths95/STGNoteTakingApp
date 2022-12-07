@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 const Signup = (props) => {
     const navigate = useNavigate();
@@ -46,29 +49,29 @@ const Signup = (props) => {
     };
 
     return (
-        <div className='container mt-2'>
+        <Container className='mt-2'>
             <h2 className='mb-2 text-center'>Create an Account for STG Note-Taker</h2>
-            <form onSubmit={ handleSubmit }>
-                <div className='mb-3'>
-                    <label htmlFor='name' className='form-label'>Name</label>
-                    <input type='text' className='form-control' id='name' name='name' onChange={ onChange } aria-describedby='emailHelp' />
-                </div>
-                <div className='mb-3'>
-                    <label htmlFor='email' className='form-label'>Email</label>
-                    <input type='email' className='form-control' id='email' name='email' onChange={ onChange } aria-describedby='emailHelp' />
+            <Form onSubmit={ handleSubmit }>
+                <Form.Group className='mb-3' controlId='formBasicName'>
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type='text' id='name' name='name' onChange={ onChange } aria-describedby='emailHelp' />
+                </Form.Group>
+                <Form.Group className='mb-3' controlId='formBasicEmail'>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type='email' id='email' name='email' onChange={ onChange } aria-describedby='emailHelp' />
                     <div id='emailHelp' className='form-text'>We'll never share your email address with anyone.</div>
-                </div>
-                <div className='mb-3'>
-                    <label htmlFor='password' className='form-label'>Password</label>
-                    <input type='password' className='form-control' id='password' name='password' onChange={ onChange } minLenght={ 8 } required />
-                </div>
-                <div className='mb-3'>
-                    <label htmlFor='cpassword' className='form-label'>Confirm Password</label>
-                    <input type='password' className='form-control' id='cpassword' name='cpassword' onChange={ onChange } minLenght={ 8 } required />
-                </div>
-                <button type='submit' className='btn btn-primary'>Sign Up</button>
-            </form>
-        </div>
+                </Form.Group>
+                <Form.Group className='mb-3' controlId='formBasicPassword'>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type='password' id='password' name='password' onChange={ onChange } minLenght={ 8 } required />
+                </Form.Group>
+                <Form.Group className='mb-3' controlId='formBasicCPassword'>
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control type='password' id='cpassword' name='cpassword' onChange={ onChange } minLenght={ 8 } required />
+                </Form.Group>
+                <Button type='submit' className='primary'>Sign Up</Button>
+            </Form>
+        </Container>
     );
 };
 

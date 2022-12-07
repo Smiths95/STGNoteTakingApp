@@ -1,13 +1,15 @@
 import './App.css';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import About from './components/About';
 import Home from './components/Home';
 import NoteState from './context/NoteState';
 import Alert from './components/Alert';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
 
@@ -26,7 +28,7 @@ function App() {
   return (
     <NoteState>
       <Router>
-        <Navbar />
+        <Header />
         <Alert alert={ alert } />
         <div className='container'>
           <Routes>
