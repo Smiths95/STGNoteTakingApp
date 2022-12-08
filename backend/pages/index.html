@@ -98,25 +98,25 @@
                 },
                 body: JSON.stringify(data)
             });
-            let rdata =  await response.json()
+            let rdata = await response.json()
             return rdata
         }
         //fetch all the notes
-        const fetchNotes = () =>{
-        const token = JSON.parse(localStorage.getItem('user'))
-        // TODO: Enable this redirection and fetching
-        // if(!user || !user.token){
-        //     window.location = "/login"
-        // }
-        if (user && user.email) {
+        const fetchNotes = () => {
+            // const token = JSON.parse(localStorage.getItem('user'))
+            // TODO: Enable this redirection and fetching
+            // if(!user || !user.token){
+            //     window.location = "/login"
+            // }
+            // if (user && user.email) {
             let noteContainer = document.querySelector(".mynotes")
-            noteContainer.innerHTML = ""
-            const notes = postData('/getnotes', { email: user.token })
+            //     noteContainer.innerHTML = ""
+            const notes = postData('/getnotes')
             notes.then((notes) => {
                 console.log("Notes", notes.notes)
                 //populate the notes
-                notes.notes.forEach(element =>{
-                let note = `
+                notes.notes.forEach(element => {
+                    let note = `
             <div class="card mx-2" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${element.title}</h5>
@@ -126,24 +126,24 @@
           
                 </div>
             </div>`
-           
-            noteContainer.innerHTML += note
-            });
-        })
+let noteContainer = document.querySelector(".mynotes")
+                    //  noteContainer.innerHTML += notes
+                });
+            })
+            // }
+            // else {
+            //     alert("please login first")
+            // }
         }
-        else {
-            alert("please login first")
-        }
-    }
-    fetchNotes()
+        fetchNotes()
         // add a click listener for submit
         let submit = document.getElementById("submit")
         submit.addEventListener("click", async () => {
             let title = document.getElementById("title").value
             let desc = document.getElementById("desc").value
-            let email = JSON.parse(localStorage.getItem(user))?.email
-            console.log("submiting this data", title, desc, email)
-            let resp = await postData("/addnote", { title, desc, email })
+            // let email = JSON.parse(localStorage.getItem(user))?.email
+            console.log("submiting this data", title, desc)
+            let resp = await postData("/addnote", { title, desc })
             if (resp.success) {
                 alert("Note Created")
                 document.getElementById("title").value = ""
