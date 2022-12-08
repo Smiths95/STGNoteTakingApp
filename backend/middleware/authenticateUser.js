@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const jwtSecret = process.env.JWT_SECRET;
+let jwt = require('jsonwebtoken');
+const JWT_SECRET = 'Getonthisnoteapp';
 
-const authenticateUser = (req, res, next) => {
+const authenticateuser = (req, res, next) => {
 
   // Get user from the jwt token and add ID to req object
   const token = req.header('auth-token');
@@ -9,7 +9,7 @@ const authenticateUser = (req, res, next) => {
     res.status(401).send({ error: 'Please authenticate using a valid token!' });
   }
   try {
-    const data = jwt.verify(token, jwtSecret);
+    const data = jwt.verify(token, JWT_SECRET);
     req.user = data.user;
     next();
   } catch(error) {
@@ -17,4 +17,4 @@ const authenticateUser = (req, res, next) => {
   }
 };
 
-module.exports = authenticateUser;
+module.exports = authenticateuser;

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb+srv://tysonlannon:rw92vrcMzwBNsXAS@cluster6977.oyy7lkw.mongodb.net/notesapp'
+const mongoURI = 'mongodb+srv://tysonlannon:rw92vrcMzwBNsXAS@cluster6977.oyy7lkw.mongodb.net/stgnotes'
 
 const connectDb = () => {
-  mongoose.connect(mongoUri, {
+  mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

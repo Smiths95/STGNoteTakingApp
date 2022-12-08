@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/Navbar';
 import About from './components/About';
 import Home from './components/Home';
 import NoteState from './context/NoteState';
@@ -17,12 +17,12 @@ function App() {
 
   const showAlert = (message, type) => {
     setAlert({
-      message: message,
+      msg: message,
       type: type
     })
     setTimeout(() => {
       setAlert(null)
-    }, 1500)
+    }, 2500)
   };
 
   return (
@@ -35,8 +35,8 @@ function App() {
             <Routes>
               <Route exact path='/' element={ <Home showAlert={ showAlert } /> } />
               <Route exact path='/about' element={ <About /> } />
-                <Route exact path='/login' element={ <Login showAlert={ showAlert } /> } />
-                <Route exact path='/signup' element={ <Signup showAlert={ showAlert } /> } />
+              <Route exact path='/login' element={ <Login showAlert={ showAlert } /> } />
+              <Route exact path='/signup' element={ <Signup showAlert={ showAlert } /> } />
             </Routes>
           </div>
         </Router>
