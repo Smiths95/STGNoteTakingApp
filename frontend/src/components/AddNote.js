@@ -16,8 +16,8 @@ const AddNote = (props) => {
 
     const onChange = (e) => {
         setNote({
-        ...note,
-        [e.target.name]: e.target.value,
+            ...note,
+            [e.target.name]: e.target.value
         });
     };
 
@@ -37,8 +37,8 @@ const AddNote = (props) => {
                     <Form.Control type='text' value={ note.title } id='title' name='title' aria-describedby='emailHelp' minLength={ 2 } required onChange={ onChange } />
                 </Form.Group>
                 <Form.Group className='mb-3'>
-                    <Form.Label>Add Content</Form.Label>
-                    <Form.Control type='text' id='description' name='description' value={ note.description } onChange={ onChange } />
+                    <Form.Label>Content</Form.Label>
+                    <Form.Control type='text' as='textarea' id='description' name='description' value={ note.description } onChange={ onChange } />
                 </Form.Group>
                 <Form.Group className='mb-3'>
                     <Form.Label>Tags/Keywords</Form.Label>

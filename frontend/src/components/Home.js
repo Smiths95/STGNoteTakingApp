@@ -7,10 +7,11 @@ const Home = (props) => {
 
     return (
         <div>
-            <AddNote showAlert={ showAlert }/>
             <div className='container' style={{ 'width': '80%' }}>
                 <Notes showAlert={ showAlert }/>
             </div>
+            <AddNote showAlert={ showAlert }/>
+
         </div>
     );
 };
