@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import NoteItem from './NoteItem';
-// import AddNote from './AddNote';
+import AddNote from './AddNote';
 import NoteContext from '../context/NoteContext';
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 
 const Notes = (props) => {
     let navigate = useNavigate();
@@ -47,6 +49,7 @@ const Notes = (props) => {
     };
 
 
+
     const handleClick = (e) => {
         refClose.current.click();
         editNote(note.eid, note.etitle, note.edescription, note.etag);
@@ -88,28 +91,17 @@ const Notes = (props) => {
                     </div>
                 </div>
             </div>
-            <div className='row my-3'>
-                <h2>Your Notes</h2>
-                <div className='container mx-2'>
-                    { notes.length === 0 && 'No notes to display' }
-                </div>
-                { notes.map((note) => {
-                    return <NoteItem key={ note._id } updateNote={ updateNote } showAlert={ props.showAlert } note={ note } />;
-                }) }
-            </div>
         </>
     )
     */
 
     return (
-    <>
-    <div>
-    {/* modal */}
-      <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </button>
-
-      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <>
+            <div>
+                <Button type="button" ref={ ref } className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </Button>
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -120,7 +112,6 @@ const Notes = (props) => {
               <form>
                 <div className="mb-3">
                   <label htmlFor="etitle" className="form-label">Edit Title</label>
-                  {/* we gave the 'name' to our input tag (of modal) and a function onChange to update the state as we type, and gave the value as the state object*/}
                   <input type="text" className="form-control"  minLength={5} required  id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} />
                 </div>
                 <div className="mb-3">
@@ -140,20 +131,17 @@ const Notes = (props) => {
           </div>
         </div>
       </div>
-      {/* /modal closed */}
-      
-      <div className="row my-3">
-        <h2>Your Notes</h2>
-          {notes.length === 0 && 'No Notes to display'}
-        {/* our state (i.e notes) is an array of objects && we iterate through the elements of array using map() and for every element(i.e note) we return the component NoteItem (i.e a card)*/}
-        {/* we pass the note as props  && updateNote() as props*/}
-        {notes.map((note) => {
-          return <NoteItem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note} />
-        })}
-      </div>
-    </div>
+            <div className='row my-3'>
+                    <h2>Your Notes</h2>
+                    { notes.length === 0 && 'No Notes to display' }
+                    { notes.map((note) => {  
+                        return <NoteItem key={ note._id } updateNote={ updateNote } showAlert={ props.showAlert } note={ note } />
+                    }) }
+            </div>
+        </div>
     </>
   )
+
 };
 
 export default Notes;
