@@ -20,7 +20,7 @@ const User = require("../models/User");
 // const { json } = require('express')
 // require("dotenv").config();
 
-const JWT_SECRET = "Getonthisnoteapp";
+JWT_SECRET = "Getonthisnoteapp";
 
 // Route 1: Create a user using POST '/api/auth/createuser'
 router.post("/createuser",
