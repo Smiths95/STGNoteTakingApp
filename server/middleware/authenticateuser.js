@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
-JWT_SECRET = 'Getonthisnoteapp'
+let jwt = require('jsonwebtoken');
+const JWT_SECRET = 'Getonthisnoteapp'
 
 const authenticateuser = (req, res, next) => {
     

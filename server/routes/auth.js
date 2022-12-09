@@ -23,14 +23,11 @@ const User = require("../models/User");
 const JWT_SECRET = "Getonthisnoteapp";
 
 // Route 1: Create a user using POST '/api/auth/createuser'
-router.post(
-  "/createuser",
+router.post("/createuser",
   [
     body("name", "Enter a valid name").isLength({ min: 3 }),
     body("email", "Enter a valid email address").isEmail(),
-    body("password", "Password must be at least 8 characters long").isLength({
-      min: 8,
-    }),
+    body("password", "Password must be at least 8 characters long").isLength({ min: 8 }),
   ],
   async (req, res) => {
     // Express-validator will validates requests and catch/send any errors
@@ -45,7 +42,7 @@ router.post(
     try {
       // Check if email already exists
       let user = await User.findOne({ email: req.body.email });
-      if (user) {
+      if(user) {
         success = false;
         return res.status(400).json({
           success,
