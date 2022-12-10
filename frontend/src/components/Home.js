@@ -11,7 +11,6 @@ const Home = (props) => {
                 <Notes showAlert={ showAlert }/>
             </div>
             <AddNote showAlert={ showAlert }/>
-
         </div>
     );
 };

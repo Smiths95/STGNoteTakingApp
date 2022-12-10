@@ -7,7 +7,7 @@ const router = express.Router();
 // Install npm package for validating name, email, etc. and import it:
 const { body, validationResult } = require("express-validator");
 
-// Install and import npm package for fashing and salting password:
+// Install and import npm package for hhshing and salting password:
 const bcrypt = require("bcrypt");
 
 // Install and import npm package for authenticating user:
