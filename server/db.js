@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://tysonlannon:rw92vrcMzwBNsXAS@cluster6977.oyy7lkw.mongodb.net/stgnotes'
+require('dotenv').config()
 
 const connectDb = () => {
-    mongoose.connect(mongoURI, {
+    mongoose.connect(process.env.MONGO_URI,
+      {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    }, () => {
-        console.log('Connected to MongoDb host!');
-    });
+      },
+      () => {
+        console.log("Connected to MongoDb host!");
+      }
+    );
 };
 
 module.exports = connectDb;
