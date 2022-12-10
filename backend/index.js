@@ -54,7 +54,8 @@ app.post('/addnote', async(req, res) => {
     }
   
 })
-app.post('/deletenote', (req, res) => {
+app.post('/deletenote', async(req, res) => {
+  let note = await Note.create(req.body)
     res.send("DELETED")
 })
 app.listen(port, () => {
