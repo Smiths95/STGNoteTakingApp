@@ -1,6 +1,7 @@
-# STG Note-Taking App
+# STG Note-Taker
 
-https://github.com/Smiths95/STGNoteTakingApp
+STG Note-Taker is an MERN fullstack app for creating, editing and deleting notes
+
 Used separate folders for frontend and server
 
 ### Frontend:
