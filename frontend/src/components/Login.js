@@ -6,12 +6,15 @@ import Container from 'react-bootstrap/Container';
 
 
 const Login = (props) => {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
-  let navigate = useNavigate();
+
+    // Declare server host
+    const host = 'http://localhost:5001';
+    const [credentials, setCredentials] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/api/auth/login', {
+    const response = await fetch(`${host}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

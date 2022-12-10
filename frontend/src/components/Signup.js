@@ -5,6 +5,10 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
 const Signup = (props) => {
+
+    // Declare server host
+    const host = 'http://localhost:5001';
+
     // Set state of input text of form
     const [credentials, setCredentials] = useState({
         name: '',
@@ -26,7 +30,7 @@ const Signup = (props) => {
             setConfirmPwd('Password does not match');
         } else {
             const { name, email, password } = credentials;
-            const response = await fetch('http://localhost:5000/api/auth/createuser', {
+            const response = await fetch(`${host}/api/auth/createuser`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

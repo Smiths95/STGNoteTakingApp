@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const NoteState = (props) => {
   // Declare the server host
-  const host = 'http://localhost:5000';
+  const host = 'http://localhost:5001';
 
   // Declare an object array
   const notesInitial = [];

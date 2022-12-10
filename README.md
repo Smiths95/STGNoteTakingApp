@@ -1,46 +1,96 @@
-STG Note-Taking App
+# STG Note-Taking App
 
-MERN Stack Framework:
-Create folder for project, STGNoteTakingApp
+https://github.com/Smiths95/STGNoteTakingApp
+Used separate folders for frontend and server
 
-Front-end:
-- Will use React.JS
-Back-end:
-- Express.JS and/or Node.JS - for app (middle) layer
-- MongoDB - used to create database layer
+### Frontend:
+- Created frontend folder using React.JS, `npx create-react-app frontend`
+- Installed dependencies:
+    - React router: `npm i react-router-dom`
+    - React Bootstrap: `npm i react-bootstrap`
+- Run using `npm start`
 
-
-Frontend Steps:
-1. Navigate to folder where code will be remotely stored, STGNoteTakingApp
-2. Create React app: npx create-react-app frontend. This will create a folder named frontend with the react templates and modules
-3. Navigate into frontend folder: cd frontend
-4. Install react-router-dom: npm i react-router-dom
-5. Install React Bootstrap: npm i react-bootstrap bootstrap
-6. Start app: npm start
-7. In src folder, create a components folder. Add files:
-  - CreateNote.jsx
-  - EditNote.jsx
-  - NoteList.jsx
-8. Update App.js and index.js files
-See https://mfikri.com/en/blog/express-mysql-react for examples of code in steps 7 and 8.
-
-Backend Steps:
-1. Create new folder, backend, in STGNoteTakingApp and navigate into it.
-2. Create package.json file: npm init -y
-3. Install express.JS, Mongoose, CORs: npm i express mongoose cors body-parser
-4. Add node.JS dependencies: npm i --save-d nodemon
-5. Add line of code to the package.json file: "type": "module"
-6. Create index.js file and paste boilerplate code.
-7. Create folders for controllers, routes and models. These will likely include files NoteController.js, NoteModel.js, and NoteRoute.js, respectively. 
-See https://mfikri.com/en/blog/express-mysql-react for examples of code for step 7.
+### Server:
+- Created server folder
+- Installed dependencies:
+    - Nodemon: `npm install -g nodemon`
+    - Express: `npm i express`
+    - Express validator: `npm i express-validator`
+    - Mongoose: `npm i mongoose`
+    - Bcrypt: `npm i bcrypt`
+    - Jsonwebtoken: `npm i jsonwebtoken`
+    - Cors: `npm i cors`
+    - Dotenv: `npm i dotenv`
+- Run using `nodemon`
 
 
-Additional Resources:
-https://www.mongodb.com/languages/mern-stack-tutorial
-https://www.positronx.io/react-mern-stack-crud-app-tutorial/
-https://community.codenewbie.org/itsnitinr/beginner-s-guide-to-the-mern-stack-roadmap-resources-37kj
-https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-2-637f337e5d61
-https://betterprogramming.pub/simple-notes-app-with-node-js-and-mongoosejs-6595cd5d15b
-https://github.com/rajpatel17-bot/mern-note-taking-app
-https://www.codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/
-https://javascript.plainenglish.io/lets-build-an-api-with-express-js-and-mongodb-for-crud-operations-d87182c57fad
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
