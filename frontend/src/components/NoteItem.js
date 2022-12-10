@@ -1,8 +1,5 @@
 import React, { useContext } from 'react';
 import NoteContext from '../context/NoteContext';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Accordion from "react-bootstrap/Accordion";
 
 
