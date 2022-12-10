@@ -1,8 +1,9 @@
 import React from 'react';
+import './about.css'
 
 const About = () => {
     return (
-      <div>About STG Note-Taker</div>
+      <h5>STG Note-Taker was developed by GangCao, Samuel Smith and Tyson Lannon in 2022 as project for a Software/Web Delvelopment Bootcamp!</h5>
     )
 }
 

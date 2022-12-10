@@ -38,7 +38,7 @@ const AddNote = (props) => {
                 </Form.Group>
                 <Form.Group className='mb-3'>
                     <Form.Label>Content</Form.Label>
-                    <Form.Control type='text' as='textarea' id='description' name='description' value={ note.description } onChange={ onChange } />
+                    <Form.Control type='text' as='textarea' rows={ 3 } id='description' name='description' value={ note.description } onChange={ onChange } />
                 </Form.Group>
                 <Form.Group className='mb-3'>
                     <Form.Label>Tags/Keywords</Form.Label>
